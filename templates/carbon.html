@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% block title %}
+Calculator Page
+{% endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<div class="container my-4">
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="container1">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <h3 class="mb-0">CARS</h3><br>
+              <p class="card-text mb-auto">Car is most widely used form of transportation and is easily affordable. It is one of the main reason of excess carbon emission in today's day to day scenario.</p>
+              <span> <a class="nav-link" href="{{ url_for('car_page') }}"><button type="button" class="btn btn-outline-primary btn-lg">CALCULATE</button></a></span>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="200" height="250" src="{{ url_for('static', filename='images/car.png') }}" alt="">
+              <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="container1">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <h3 class="mb-0">HOUSEHOLD</h3><br>
+              <p class="mb-auto">Household generates a decent amount of waste which heavily contributes towards carbon emission in the society.</p>
+              <span> <a class="nav-link" href="{{url_for('household_page')}}">  <button type="button" class="btn btn-outline-primary btn-lg">CALCULATE</button> </a></span>
+
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="200" height="250" src="{{ url_for('static', filename='images/house.png') }}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="container1">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <h3 class="mb-0">AEROPLANE</h3><br>
+              <p class="card-text mb-auto">Aeroplane is the fastest mode of transportation known to humans but it also leads huge amount of carbon emission in our enivornment.</p>
+              <span> <a class="nav-link" href="{{url_for('aeroplane_page')}}">  <button type="button" class="btn btn-outline-primary btn-lg">CALCULATE</button></a></span>
+
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="200" height="250" src="{{ url_for('static', filename='images/plane.png') }}" alt="">
+              <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="container1">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <h3 class="mb-0">TRAIN</h3><br>
+              <p class="mb-auto">Train is generally used by people for travelling long distances in comfort.It heavily contributes to carbon emissions working of fuel and electricity.</p>
+              <span> <a class="nav-link" href="{{url_for('train_page')}}"> <button type="button" class="btn btn1 btn-outline-primary btn-lg">CALCULATE</button></a></span>
+
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="200" height="250" src="{{ url_for('static', filename='images/train.png') }}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="container1">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <h3 class="mb-0">BUS</h3><br>
+              <p class="card-text mb-auto">Buses are cheap and affordable mode of transportation for common people due to which many people travel with it rather than their car.</p>
+              <span> <a class="nav-link" href="{{url_for('bus_page')}}"><button type="button" class="btn btn1 btn-outline-primary btn-lg">CALCULATE</button></a></span>
+
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="200" height="250" src="{{ url_for('static', filename='images/bus.png') }}" alt="">
+              <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="container1">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <h3 class="mb-0">LIVESTOCK</h3><br>
+              <p class="mb-auto">People consume livestockes and animal leading to carbon emmission.People now a days heavily consume meat and animal products leading to excess carbon emissions in the environment.</p>
+              <span><a class="nav-link" href="{{url_for('animal_page')}}"> <button type="button" class="btn btn-outline-primary btn-lg">CALCULATE</button></a></span>
+
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="200" height="250" src="{{ url_for('static', filename='images/cow.jpg') }}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--background image-->
+  <style>
+    body {
+      /* background-image: url("status2.jpg"); */
+      /* background-size: cover; */
+      /* background-repeat: no-repeat; */
+      /* background-position: center; */
+      background-color:#386e70;
+    }
+
+    .container1 {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      outline: none;
+      border: black;
+      background-color: #e2d3e6;
+
+    }
+  </style>
+  {% else %}
+ <div class="container my-4">
+    <p>Please log in to access this page.</p>
+    <a class="nav-link" href="{{ url_for('login_page') }}">
+        <button type="button" class="btn  btn-lg">Log In</button>
+    </a>
+</div>
+<style>
+  .container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+  }
+  .btn1{
+    background:gray;
+  }
+  .btn:hover{
+    
+  }
+</style>
+{% endif %}
+  {% endblock %}

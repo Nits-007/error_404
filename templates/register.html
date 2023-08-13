@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block title %}
+Register Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center b1">
+    <style>
+        .b1{
+            background-color:#91b4c9;
+        }
+    </style>
+    <style>
+    
+        @media (max-width: 768px) {
+
+            .container1 {
+                height: auto;
+            }
+            .hero {
+                width: 100%;
+            }
+            .cont1, .cont2, .cont3 {
+                width: 100%;
+            }
+            .cont3 {
+                left: 0;
+            }
+            .form-control{
+                width :50%;
+            }
+            .btn{
+                margin-left : 0px;
+            }
+        }
+    </style>
+    <div class="container">
+        <form method="POST" class="form-register" style="color:black">
+            <i class="bi bi-person-fill fa-6x ct-1"></i>
+           
+            {{form.hidden_tag()}}
+            
+
+            <div class="container1">
+    
+            <h1 class="h3 mb-3 font-weight-normal hero">
+                Please Create your Account
+            </h1>
+            <br>
+            <div class="cont1">
+            {{ form.username.label() }}
+            <div class="cont2">
+            {{ form.username(class="form-control", placeholder="User Name") }}
+            </div>
+            </div>
+            <style>
+                .cont1{
+                    
+                    display:flex;
+                    width:650px;
+                    align-items:center;
+                    justify-content:space-between;
+                    margin-bottom:15px;
+                    
+                    
+                    
+                }
+               .container1{
+                
+                
+                height:60vh;
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                justify-content:center;
+            
+               }
+              
+                .cont2{
+                
+                    width:500px;
+                }
+                .cont3{
+                    width:250px;
+                    position:relative;
+                    left:100px;
+                    
+                }
+                .hero{
+                    
+                    text-align:center;
+                    
+                    width:600px;
+                }
+            </style>
+              <div class="cont1">
+            {{ form.email_address.label() }}
+            <div class="cont2">
+            {{ form.email_address(class="form-control", placeholder="Email Address") }}
+            </div>
+              </div>
+              <div class="cont1">
+            {{ form.password1.label() }}
+            <div class="cont2">
+            {{ form.password1(class="form-control", placeholder="Password" ) }}
+            </div>
+        </div>
+        <div class="cont1">
+            {{ form.password2.label() }}
+            <div class="cont2">
+            {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+            </div>
+        </div>
+
+            <br>
+            <div class="cont3">
+
+            {{ form.submit(class="btn btn-lg btn-block btn-secondary") }}
+            </div>
+        </div>
+
+        </form>
+    </div>
+</body>
+{% endblock %}

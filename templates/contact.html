@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}
+Contact Page
+{% endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<style>
+  body {
+    background-color: #91b4c9;
+  }
+</style>
+<div class="container mt-3">
+  <form id="contactForm">
+      <h3 class="display-3"><i class="bi bi-person-rolodex"></i> Contact Us</h3>
+      <div class="form-group">
+          <label for="inputFirstName"></label>
+          <input style="width: 50%" type="text" class="form-control" id="inputFirstName" placeholder="Enter Firstname" required>
+      </div>
+      <div class="form-group">
+          <label for="inputLastName"></label>
+          <input style="width: 50%" type="text" class="form-control" id="inputLastName" placeholder="Enter Lastname" required>
+      </div>
+      <div class="form-group">
+          <label for="inputEmail"></label>
+          <input style="width: 50%" type="email" class="form-control" id="inputEmail" placeholder="Enter email'id" required>
+      </div>
+      <div class="form-group">
+          <label for="inputMobileNumber"></label>
+          <input style="width: 50%" type="tel" class="form-control" id="inputMobileNumber" placeholder="Enter Mobile number" required>
+      </div>
+      <div class="form-floating">
+          <textarea class="form-control mt-4" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px;width:50%" required></textarea>
+          <label for="floatingTextarea2">Comments</label>
+      </div>
+      <button type="button" class="btn btn-secondary mt-4" id="submitButton">Submit</button>
+  </form>
+</div>
+
+<!-- Bootstrap Modal for Displaying Message -->
+<div class="modal fade" id="ResultModal" tabindex="-1" aria-labelledby="ResultModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content bg-dark">
+          <div class="modal-header">
+              <h5 class="modal-title text-white" id="ResultModalLabel">Form Submission Result</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="modalBody">
+              <!-- Submission result message will be displayed here -->
+          </div>
+          <div class="modal-footer">
+              <!-- <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button> -->
+              <a href="{{ url_for('home_page') }}" class="btn btn1 btn-outline-danger">Close</a>
+          </div>
+      </div>
+  </div>
+</div>
+<style>
+#modalBody{
+  color: white;
+}
+</style>
+<script>
+  document.getElementById("submitButton").addEventListener("click", function() {
+      const form = document.getElementById("contactForm");
+      
+      if (!form.checkValidity()) {
+          document.getElementById("modalBody").textContent = "Please fill the information properly.";
+      } else {
+          // Change the message when the form is correctly filled out
+          document.getElementById("modalBody").textContent = "Your details have been submitted you will recieve call from our end soon.";
+          
+          // Optionally: reset the form if needed
+          // form.reset();
+      }
+      // Display the modal in both cases (either error message or success message)
+      new bootstrap.Modal(document.getElementById('ResultModal')).show();
+  });
+</script>
+{% else %}
+ <div class="container my-4">
+    <p>Please log in to access this page.</p>
+    <a class="nav-link" href="{{ url_for('login_page') }}">
+        <button type="button" class="btn  btn-lg">Log In</button>
+    </a>
+</div>
+<style>
+  .container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+  }
+  .btn1{
+    background:gray;
+  }
+  .btn:hover{
+    
+  }
+</style>
+{% endif %}
+
+{% endblock %}

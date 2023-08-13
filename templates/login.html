@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% block title %}
+    Login Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center c-1">
+    <style>
+        .c-1{
+            background-color:#91b4c9;
+        }
+    </style>
+    <style>
+    
+        @media (max-width: 768px) {
+
+            .container1 {
+                height: auto;
+            }
+            .hero {
+                width: 100%;
+            }
+            .cont1, .cont2, .cont3 {
+                width: 100%;
+            }
+            .cont3 {
+                left: 0;
+            }
+            .form-control{
+                width :50%;
+            }
+            .btn{
+                margin-left : 0px;
+            }
+        }
+    </style>
+  
+    
+    <div class="container">
+        <form method="POST" class="form-signin" style="color:black">
+            <i class="bi bi-person-fill fa-6x c-2"></i>
+            {{ form.hidden_tag() }}
+            
+            <div class="container1">
+    
+                <h1 class="h3 mb-3 font-weight-normal hero">
+                    Please Login
+                </h1>
+                <br>
+                <div class="cont1">
+            {{ form.username.label() }}
+            <div class="cont2">
+            {{ form.username(class="form-control", placeholder="User Name") }}
+        </div>
+    </div>
+    <style>
+        .cont1{
+            
+            display:flex;
+            width:650px;
+            align-items:center;
+            justify-content:space-between;
+            margin-bottom:15px;
+            
+            
+            
+        }
+       .container1{
+        
+        
+        height:60vh;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+       }
+      
+        .cont2{
+        
+            width:500px;
+        }
+        .cont3{
+            width:250px;
+            position:relative;
+            left:100px;
+            
+        }
+        .hero{
+            
+            text-align:center;
+            
+            width:600px;
+        }
+        .c2{
+            margin-top : 3px;
+        }
+    </style>
+      <div class="cont1">
+
+            {{ form.password.label() }}
+            <div class="cont2">
+            {{ form.password(class="form-control", placeholder="Password") }}
+        </div>
+    </div>
+
+            <br>
+
+    
+            <div class="checkbox mb-3">
+               <h6>Do not have an account?</h6>
+               <a class="btn btn-sm btn-danger" href="{{ url_for('register_page') }}">Register</a>
+            </div>
+        
+
+            {{ form.submit(class="btn btn-lg btn-block btn-secondary") }}
+
+        </form>
+    </div>
+</body>
+{% endblock %}

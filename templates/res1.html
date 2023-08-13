@@ -1,0 +1,127 @@
+!<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
+    
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='images/carbon-footprint-logo.png') }}"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{url_for('home_page')}}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{url_for('about_page')}}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{url_for('contact_page')}}">Contact</a>
+            </li>
+          </ul>
+          <button type="button" class="btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#profileModal">My
+            Profile</button>
+          <a class="nav-link" href="{{ url_for('login_page') }}">
+          <button type="button" class="btn btn-success mx-2">Login</button></a>
+          <a class="nav-link" href="{{ url_for('register_page') }}">
+          <button type="button" class="btn btn-success mx-2">Sign
+            Up</button></a>
+        </div>
+      </div>
+    </nav>
+  
+
+    <!-- <h1>Hello, world!</h1> -->
+    <div class="container mt-4 mb-4 cc-1">
+        <div class="lll">
+        {% if result is not none %}
+        <h1 class="hh"> RESULT : </h1>
+        <p class="nnn"> {{ result }} t </p>
+        {% endif %}
+        </div>
+        <div class="container pp">
+            <h2>Some ways to control Carbon Emission : </h2>
+            <ul>
+          <li><p class="mm">  Promote Renewable Energy : <br>
+
+Shift from fossil fuel-based power generation to renewable sources like solar, wind, and hydropower.
+Invest in grid infrastructure to accommodate renewable energy integration.<br><a class="aa" href="https://www.un.org/en/climatechange/what-is-renewable-energy" target="_blank">For Further information(Click here)</a></p></li>
+<li><p class="mm">Energy Efficiency :<br>
+Retrofit homes and businesses to be more energy efficient with better insulation and energy-efficient appliances.
+Encourage industries to adopt energy-efficient technologies and processes.<br><a class="aa"href="https://www.tuvsud.com/en/themes/corporate-sustainability/energy-efficiency-services?utm_source=google&utm_medium=cpc&utm_campaign=2022_energy-efficiency_gl_gl_co_cor_tff_ts&utm_term=energy%20efficiency&s_kwcid=AL!14017!3!590327596953!b!!g!!energy%20efficiency&gclid=CjwKCAjw29ymBhAKEiwAHJbJ8iX35zqmjbXNz14T0lAS2wWztZOh-ay_C0sc2vBv2aWLcas8ITOJAhoCHQYQAvD_BwE" target="_blank">For Further information(Click here)</a></p></li>
+<li><p class="mm">Public Transport & Carpooling :<br>
+Invest in public transportation infrastructure.
+Promote carpooling and use of shared transportation services.
+Develop and promote the use of bicycles through bike lanes and bike-sharing programs.<br><a class="aa" target="_blank" href="https://www.iges.or.jp/en/topics/sustainable-societies/sustainable-cities-and-transport?gclid=CjwKCAjw29ymBhAKEiwAHJbJ8h4bofTs7e09tBA93d6SRMWbSirqodJvFz4ewo4wlXCBqWcwdD03YRoCSRcQAvD_BwE">For Further information(Click here)</a></p></li>
+</ul>
+
+<a href="{{url_for('carbon_page')}}" class="btn btn-secondary">Go back to<br> Calculator</a>
+</div>
+    </div>
+    <style>
+        .lll{
+
+        }
+        .nnn{
+            font-size : 20px ;
+            font-weight : bold ;
+        }
+        body{
+            background-color: #91b4c9;
+        }
+        .container{
+            /* border: 2px solid rebeccapurple; */
+            height: 93vh;
+            /* margin-top: 0px; */
+            /* margin-bottom: 10px; */
+            /* padding-top: 0px; */
+        }
+        .cc-1{
+            text-align: center;
+        }
+        .hh{
+            letter-spacing: 1px;
+        }
+        .pp{
+            /* border: 2px solid red; */
+            height: 75%;
+        }
+        .mm{
+            text-align: left;
+            font-size: 20px;
+        }
+        .aa{
+            color: black;
+            font-size: 12px;
+        }
+    </style>
+    <div class="d-flex flex-column flex-sm-row justify-content-between custom-2  text-center fixed-bottom">
+        <style>
+          .custom-2 {
+            background-color: darkgray;
+          }
+        </style>
+    
+        <p class="mx-4 my-2 text-center">© 2023 Company, Inc. All rights reserved.</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3 px-2 my-2"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram fs-4"></i></a></li>
+          <li class="ms-3 px-2 my-2"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook fs-4"></i></a></li>
+          <li class="ms-3 px-2 my-2"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter fs-4"></i></a></li>
+          <li class="ms-3 px-2 my-2"><a class="link-body-emphasis" href="#"><i class="bi bi-linkedin fs-4"></i></a></li>
+          <li class="ms-3 px-2 my-2"><a class="link-body-emphasis" href="#"><i class="bi bi-whatsapp fs-4"></i></a></li>
+        </ul>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
